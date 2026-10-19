@@ -1,0 +1,1284 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" id="htmlRoot">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Research Pro | دکتر امیرمحمد احمدزاده - مدیر و سرپژوهشگر</title>
+    
+    <!-- تگ‌های سئو (SEO) برای موتور جستجوی گوگل -->
+    <meta name="description" content="Research Pro - مرکز تخصصی مشاوره مقالات علمی (ISI, Scopus)، پایان‌نامه و پروژه‌های فریلنسری به مدیریت و سرپژوهشگری دکتر امیرمحمد احمدزاده.">
+    <meta name="keywords" content="Research Pro, ریسرچ پرو, دکتر امیرمحمد احمدزاده, مشاوره مقاله ISI, مشاوره پایان نامه, پروژه فریلنسری, شبیه سازی متلب و پایتون">
+    <meta name="author" content="Dr. Amirmohammad Ahmadzadeh">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Research Pro | Dr. Amirmohammad Ahmadzadeh - Director & Chief Researcher">
+    <meta property="og:description" content="International Academic Research, Thesis Advisory & Freelance Engineering Platform">
+    <meta property="og:type" content="website">
+
+    <!-- داده‌های ساختاریافته گوگل (Google Schema JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ResearchOrganization",
+      "name": "Research Pro",
+      "founder": {
+        "@type": "Person",
+        "name": "Dr. Amirmohammad Ahmadzadeh",
+        "jobTitle": "Director & Chief Researcher"
+      },
+      "telephone": "+989144347801",
+      "description": "Academic Paper Consulting, Thesis Advisory, and Freelance Engineering Platform in Persian, English, and Turkish."
+    }
+    </script>
+
+    <!-- فونت فارسی وزیرمتن و فونت لاتین اینتر -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Flatpickr Popup Calendar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_blue.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/fa.js"></script>
+    <script src="https://npmcdn.com/flatpickr/dist/l10n/tr.js"></script>
+
+    <style>
+        body {
+            font-family: 'Vazirmatn', 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        html[dir="ltr"] body {
+            font-family: 'Inter', 'Vazirmatn', sans-serif;
+        }
+        .flatpickr-calendar {
+            font-family: 'Vazirmatn', 'Inter', sans-serif !important;
+            border-radius: 16px !important;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15) !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 leading-relaxed min-h-screen flex flex-col">
+
+    <!-- نوار ناوبری (Navbar) -->
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 py-3.5 flex flex-wrap justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-900 to-indigo-600 text-white flex items-center justify-center font-extrabold text-base shadow-md tracking-tighter">
+                    RP
+                </div>
+                <div>
+                    <a href="#" class="text-xl font-black text-blue-950 block leading-none tracking-tight">Research Pro</a>
+                    <span class="text-xs text-slate-500 font-medium" data-i18n="brand_sub">به مدیریت و سرپژوهشگری دکتر امیرمحمد احمدزاده</span>
+                </div>
+            </div>
+
+            <!-- لینک‌های منو -->
+            <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-600">
+                <a href="#about" class="hover:text-blue-600 transition" data-i18n="nav_about">معرفی مجموعه</a>
+                <a href="#services" class="hover:text-blue-600 transition" data-i18n="nav_services">خدمات تخصصی</a>
+                <a href="#publications" class="hover:text-blue-600 transition" data-i18n="nav_pubs">رزومه و مقالات</a>
+                <a href="#team" class="hover:text-blue-600 transition" data-i18n="nav_team">تیم فریلنسرها</a>
+                <a href="#booking" class="hover:text-blue-600 transition" data-i18n="nav_booking">ثبت سفارش و نوبت</a>
+            </nav>
+
+            <!-- انتخاب زبان + دکمه پنل مدیریت -->
+            <div class="flex items-center gap-2">
+                <div class="inline-flex rounded-xl bg-slate-100 p-1 border border-slate-200">
+                    <button onclick="setLanguage('fa')" id="btn-fa" class="px-2.5 py-1 rounded-lg text-xs font-bold transition bg-blue-600 text-white">فارسی</button>
+                    <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1 rounded-lg text-xs font-bold transition text-slate-600 hover:text-slate-900">EN</button>
+                    <button onclick="setLanguage('tr')" id="btn-tr" class="px-2.5 py-1 rounded-lg text-xs font-bold transition text-slate-600 hover:text-slate-900">TR</button>
+                </div>
+
+                <button onclick="openAdminModal()" class="bg-slate-900 hover:bg-blue-950 text-white text-xs px-3.5 py-2.5 rounded-xl font-bold transition flex items-center gap-1.5 shadow-sm">
+                    <span>🔐</span>
+                    <span data-i18n="nav_admin">پنل مدیریت</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- بخش معرفی اصلی (Hero Section) -->
+    <section id="about" class="bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950 text-white py-16 md:py-24 px-4 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10 relative z-10">
+            <div class="w-36 h-36 md:w-44 md:h-44 rounded-3xl bg-gradient-to-tr from-blue-600 to-indigo-400 border-4 border-white/20 flex flex-col items-center justify-center shadow-2xl shrink-0">
+                <span class="text-3xl font-black tracking-wider">RP</span>
+                <span class="text-[11px] uppercase tracking-widest text-blue-100 mt-1">Research Pro</span>
+            </div>
+            <div class="text-center md:text-start flex-1">
+                <div class="inline-flex items-center gap-2 bg-blue-500/20 text-blue-300 text-xs font-bold px-4 py-1.5 rounded-full border border-blue-400/30 mb-4">
+                    <span>🌐 Research Pro</span>
+                    <span>|</span>
+                    <span data-i18n="hero_role">مدیر و سرپژوهشگر: دکتر امیرمحمد احمدزاده</span>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-black mb-3 leading-tight" data-i18n="hero_title">
+                    مجموعه تخصصی Research Pro
+                </h1>
+                <p class="text-blue-300 font-bold text-base md:text-lg mb-4" data-i18n="hero_subtitle">
+                    دکتر امیرمحمد احمدزاده — مدیر و سرپژوهشگر (Director & Chief Researcher)
+                </p>
+                <p class="text-slate-300 text-sm md:text-base max-w-2xl mb-7 leading-relaxed" data-i18n="hero_desc">
+                    مرکز بین‌المللی مشاوره، نگارش و چاپ مقالات معتبر علمی (ISI, Scopus, IEEE)، هدایت تخصصی پایان‌نامه‌های کارشناسی ارشد و دکتری، و اجرای پروژه‌های فریلنسری مهندسی، شبیه‌سازی و هوش مصنوعی (Python & MATLAB) به سه زبان فارسی، انگلیسی و ترکی استانبولی.
+                </p>
+
+                <div class="flex flex-wrap justify-center md:justify-start items-center gap-3.5">
+                    <a href="#booking" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3.5 rounded-xl font-bold text-sm transition shadow-lg">
+                        <span data-i18n="hero_cta_book">📅 ثبت سفارش و رزرو نوبت مشاوره</span>
+                    </a>
+                    <a href="tel:09144347801" class="bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3.5 rounded-xl font-bold text-sm transition shadow-lg flex items-center gap-2 border border-emerald-400/40">
+                        <span>📞</span>
+                        <span data-i18n="hero_phone_label">تماس مستقیم:</span>
+                        <span dir="ltr" class="font-mono tracking-wider">09144347801</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش خدمات تخصصی (Services) -->
+    <section id="services" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900" data-i18n="srv_heading">خدمات تخصصی مجموعه Research Pro</h2>
+            <p class="text-slate-500 mt-2 text-sm md:text-base" data-i18n="srv_subheading">ارائه خدمات پژوهشی، آکادمیک و فریلنسری در سطح بین‌المللی به سه زبان فارسی، انگلیسی و ترکی استانبولی</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-7 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md hover:border-blue-300 transition">
+                <div class="w-12 h-12 bg-blue-100 text-blue-700 rounded-2xl flex items-center justify-center font-bold text-2xl mb-5">📄</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2.5" data-i18n="srv1_title">مشاوره و نگارش مقالات علمی (ISI / Scopus)</h3>
+                <p class="text-slate-600 text-sm leading-relaxed" data-i18n="srv1_desc">
+                    مشاوره صفر تا صد استخراج مقاله از پایان‌نامه، نگارش آکادمیک، انتخاب ژورنال، سابمیت، داوری (Revise) و پیاده‌سازی کدهای پژوهشی برای ژورنال‌های معتبر بین‌المللی Q1 تا Q4.
+                </p>
+            </div>
+
+            <div class="bg-white p-7 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md hover:border-emerald-300 transition">
+                <div class="w-12 h-12 bg-emerald-100 text-emerald-700 rounded-2xl flex items-center justify-center font-bold text-2xl mb-5">🎓</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2.5" data-i18n="srv2_title">مشاوره تخصصی پایان‌نامه و رساله</h3>
+                <p class="text-slate-600 text-sm leading-relaxed" data-i18n="srv2_desc">
+                    انتخاب موضوع نوآورانه، تدوین پروپوزال، مدل‌سازی، تحلیل آماری و شبیه‌سازی، نگارش فصول و آماده‌سازی جلسه دفاع برای مقاطع کارشناسی ارشد و دکتری در دانشگاه‌های داخل و خارج.
+                </p>
+            </div>
+
+            <div class="bg-white p-7 rounded-2xl shadow-sm border border-slate-200/80 hover:shadow-md hover:border-purple-300 transition">
+                <div class="w-12 h-12 bg-purple-100 text-purple-700 rounded-2xl flex items-center justify-center font-bold text-2xl mb-5">💻</div>
+                <h3 class="text-lg font-bold text-slate-900 mb-2.5" data-i18n="srv3_title">پروژه‌های فریلنسری و شبیه‌سازی مهندسی</h3>
+                <p class="text-slate-600 text-sm leading-relaxed" data-i18n="srv3_desc">
+                    اجرای پروژه‌های فریلنسری بین‌المللی در حوزه یادگیری ماشین، شبکه‌های عصبی گراف (GNN)، شبکه‌های عصبی آگاه از فیزیک (PINNs)، بهینه‌سازی انرژی و برنامه‌نویسی تخصصی Python و MATLAB.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- بخش مقالات و فایل‌های قابل دانلود (پویا و متصل به پنل مدیریت) -->
+    <section id="publications" class="py-16 px-4 bg-white border-y border-slate-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900" data-i18n="pub_heading">رزومه پژوهشی، مقالات و فایل‌های علمی</h2>
+                    <p class="text-slate-500 mt-1 text-sm" data-i18n="pub_subheading">فهرست پژوهش‌های سرپژوهشگر مجموعه به همراه دانلود مستقیم فایل‌های PDF، Word و مستندات</p>
+                </div>
+                <button onclick="openAdminModal()" class="text-xs bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold px-4 py-2.5 rounded-xl border border-blue-200 transition">
+                    <span data-i18n="pub_admin_btn">➕ افزودن مقاله یا بارگذاری فایل (در پنل مدیریت)</span>
+                </button>
+            </div>
+
+            <!-- کانتینر داینامیک مقالات -->
+            <div id="publicationsContainer" class="space-y-4"></div>
+        </div>
+    </section>
+
+    <!-- بخش تیم فریلنسرها و پژوهشگران مجموعه Research Pro -->
+    <section id="team" class="py-16 px-4 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+            <div>
+                <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900" data-i18n="team_heading">تیم فریلنسرها و پژوهشگران Research Pro</h2>
+                <p class="text-slate-500 mt-1 text-sm" data-i18n="team_subheading">متخصصان و فریلنسرهای همکار تحت نظارت دکتر امیرمحمد احمدزاده (مدیر و سرپژوهشگر)</p>
+            </div>
+            <button onclick="openAdminModal()" class="text-xs bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold px-4 py-2.5 rounded-xl border border-indigo-200 transition">
+                <span data-i18n="team_admin_btn">👤 افزودن فریلنسر جدید به مجموعه (پنل مدیریت)</span>
+            </button>
+        </div>
+
+        <div id="freelancersContainer" class="grid md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <!-- بخش ثبت درخواست مشتری، نوبت‌دهی تقویمی و آپلود فایل مشتری -->
+    <section id="booking" class="py-16 px-4 max-w-4xl mx-auto w-full">
+        <div class="bg-white rounded-3xl shadow-xl border border-slate-200 overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-950 via-blue-900 to-slate-900 text-white p-8 text-center">
+                <h2 class="text-2xl md:text-3xl font-extrabold" data-i18n="book_heading">ثبت درخواست مشاوره، پروژه و رزرو نوبت</h2>
+                <p class="text-blue-200 text-sm mt-2" data-i18n="book_subheading">
+                    تاریخ مشاوره را از پنجره تقویم انتخاب کنید، فایل پروژه یا مقاله خود را بارگذاری نمایید یا مستقیماً تماس بگیرید:
+                </p>
+                <div class="mt-4 inline-flex items-center gap-2 bg-white/10 px-5 py-2 rounded-full border border-white/20 text-emerald-300 font-bold text-base">
+                    <span>📞</span>
+                    <span data-i18n="book_phone_title">شماره تماس مستقیم مدیر و سرپژوهشگر:</span>
+                    <a href="tel:09144347801" dir="ltr" class="underline hover:text-white font-mono">09144347801</a>
+                </div>
+            </div>
+
+            <form id="appointmentForm" onsubmit="handleBookingSubmit(event)" class="p-8 space-y-6">
+                <div id="bookingAlert" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-800 text-sm font-bold text-center"></div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="lbl_name">نام و نام خانوادگی متقاضی *</label>
+                        <input type="text" id="inp_name" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="lbl_phone">شماره موبایل / واتساپ *</label>
+                        <input type="tel" id="inp_phone" required dir="ltr" placeholder="09144347801"
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm font-mono">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="lbl_service">نوع درخواست / مشاوره *</label>
+                        <select id="inp_service" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm bg-white">
+                            <option value="مشاوره و نگارش مقاله (ISI/Scopus)" data-i18n="opt_srv1">مشاوره و نگارش مقاله علمی (ISI / Scopus)</option>
+                            <option value="مشاوره پایان‌نامه و رساله" data-i18n="opt_srv2">مشاوره پایان‌نامه و رساله (ارشد / دکتری)</option>
+                            <option value="پروژه فریلنسری و شبیه‌سازی" data-i18n="opt_srv3">پروژه فریلنسری و شبیه‌سازی (Python / MATLAB)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="lbl_date">انتخاب تاریخ (پنجره تقویم) *</label>
+                        <div class="relative">
+                            <input type="text" id="inp_date" required readonly
+                                placeholder="کلیک برای باز شدن تقویم..."
+                                class="w-full px-4 py-3 rounded-xl border border-blue-400 bg-blue-50/40 cursor-pointer focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm font-medium">
+                            <span class="absolute end-3 top-3 text-blue-600 pointer-events-none">📅</span>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="lbl_time">بازه زمانی مشاوره *</label>
+                        <select id="inp_time" required
+                            class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm bg-white">
+                            <option value="10:00 - 12:00" data-i18n="opt_t1">صبح (۱۰:۰۰ تا ۱۲:۰۰)</option>
+                            <option value="15:00 - 18:00" data-i18n="opt_t2">عصر (۱۵:۰۰ تا ۱۸:۰۰)</option>
+                            <option value="19:00 - 22:00" data-i18n="opt_t3">شب (۱۹:۰۰ تا ۲۲:۰۰)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- بخش بارگذاری فایل توسط مشتری -->
+                <div class="bg-slate-50 p-5 rounded-2xl border-2 border-dashed border-blue-300">
+                    <label class="block text-sm font-bold text-blue-950 mb-1.5" data-i18n="lbl_customer_file">
+                        📎 بارگذاری فایل پیوست توسط مشتری (PDF، Word، پروپوزال، مقاله، کد یا ZIP - اختیاری)
+                    </label>
+                    <p class="text-xs text-slate-500 mb-3" data-i18n="lbl_customer_file_hint">
+                        می‌توانید فایل پروپوزال، پیش‌نویس مقاله، دیتاست یا مستندات پروژه خود را ضمیمه کنید تا در پنل مدیریت بررسی شود.
+                    </p>
+                    <input type="file" id="inp_customer_file" accept="*/*"
+                        class="block w-full text-xs text-slate-600 file:me-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-bold text-slate-700 mb-2" data-i18n="lbl_notes">توضیحات تکمیلی پروژه، رشته تحصیلی یا موضوع مقاله</label>
+                    <textarea id="inp_notes" rows="3"
+                        class="w-full px-4 py-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-blue-500 focus:outline-none text-sm"></textarea>
+                </div>
+
+                <button type="submit" id="submitBtn"
+                    class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-xl transition shadow-md text-sm" data-i18n="btn_submit">
+                    ثبت قطعی درخواست و ارسال فایل
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- مودال پنل مدیریت جامع (Admin Panel Modal) -->
+    <div id="adminModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm hidden z-50 flex items-center justify-center p-3 md:p-6">
+        <div class="bg-white rounded-3xl shadow-2xl max-w-6xl w-full max-h-[92vh] overflow-y-auto border border-slate-200 flex flex-col">
+            <!-- هدر پنل مدیریت -->
+            <div class="bg-slate-900 text-white px-6 py-4 flex justify-between items-center sticky top-0 z-20">
+                <div class="flex items-center gap-2.5 font-extrabold text-sm md:text-base">
+                    <span>🔐</span>
+                    <span>پنل مدیریت جامع Research Pro (ویژه دکتر امیرمحمد احمدزاده)</span>
+                </div>
+                <button onclick="closeAdminModal()" class="text-slate-400 hover:text-white text-2xl font-bold leading-none">&times;</button>
+            </div>
+
+            <!-- صفحه ورود به پنل مدیریت -->
+            <div id="adminLoginSection" class="p-8 max-w-md mx-auto w-full space-y-5 my-8">
+                <div class="text-center">
+                    <div class="w-14 h-14 rounded-2xl bg-blue-900 text-white flex items-center justify-center mx-auto mb-3 text-xl font-black">RP</div>
+                    <h3 class="text-xl font-extrabold text-slate-900">ورود مدیر و سرپژوهشگر</h3>
+                    <p class="text-xs text-slate-500 mt-1">نام کاربری پیش‌فرض: <code class="bg-slate-100 px-1.5 py-0.5 rounded">admin</code> | رمز پیش‌فرض: <code class="bg-slate-100 px-1.5 py-0.5 rounded">123456</code></p>
+                </div>
+                <div id="loginError" class="hidden p-3 rounded-xl bg-red-50 text-red-600 text-xs font-bold text-center border border-red-200">
+                    نام کاربری یا رمز عبور اشتباه است!
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">نام کاربری (Username)</label>
+                    <input type="text" id="adminUserInp" dir="ltr" placeholder="admin" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm font-mono">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">رمز عبور (Password)</label>
+                    <input type="password" id="adminPassInp" dir="ltr" placeholder="••••••" class="w-full px-4 py-3 rounded-xl border border-slate-300 text-sm font-mono">
+                </div>
+                <button onclick="loginAdmin()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl text-sm transition shadow">
+                    ورود به پنل مدیریت
+                </button>
+            </div>
+
+            <!-- داشبورد کامل مدیریت پس از ورود -->
+            <div id="adminDashboardSection" class="hidden p-6 space-y-6">
+                <!-- نوار تب‌های مدیریت -->
+                <div class="flex flex-wrap justify-between items-center gap-3 border-b border-slate-200 pb-4">
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="switchAdminTab('tab_orders')" id="btn_tab_orders" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-blue-600 text-white transition">
+                            📋 درخواست‌ها و فایل‌های مشتریان
+                        </button>
+                        <button onclick="switchAdminTab('tab_pubs')" id="btn_tab_pubs" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                            📚 مدیریت مقالات و آپلود فایل (PDF/Word/All)
+                        </button>
+                        <button onclick="switchAdminTab('tab_team')" id="btn_tab_team" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                            👥 افزودن و مدیریت فریلنسرها
+                        </button>
+                        <button onclick="switchAdminTab('tab_security')" id="btn_tab_security" class="px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                            🔑 تغییر رمز ورود و پشتیبان‌گیری
+                        </button>
+                    </div>
+
+                    <button onclick="logoutAdmin()" class="bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs px-4 py-2.5 rounded-xl font-bold transition">
+                        خروج از پنل
+                    </button>
+                </div>
+
+                <!-- تب ۱: مدیریت درخواست‌ها و نوبت‌های مشتریان + دانلود فایل پیوست مشتری -->
+                <div id="tab_orders" class="space-y-4">
+                    <div class="flex flex-wrap justify-between items-center gap-3">
+                        <div>
+                            <h3 class="text-base font-extrabold text-slate-900">لیست سفارش‌ها، نوبت‌های مشاوره و فایل‌های ارسالی مشتریان</h3>
+                            <p class="text-xs text-slate-500">می‌توانید فایل‌های بارگذاری‌شده توسط مشتری را مستقیماً دانلود کنید.</p>
+                        </div>
+                        <button onclick="exportAppointmentsCSV()" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs px-4 py-2 rounded-xl font-bold transition">
+                            📥 خروجی اکسل نوبت‌ها (CSV)
+                        </button>
+                    </div>
+
+                    <div class="overflow-x-auto border border-slate-200 rounded-2xl">
+                        <table class="w-full text-right border-collapse">
+                            <thead>
+                                <tr class="bg-slate-100 text-slate-700 text-xs">
+                                    <th class="p-3">نام مشتری</th>
+                                    <th class="p-3">شماره تماس</th>
+                                    <th class="p-3">نوع درخواست</th>
+                                    <th class="p-3">تاریخ و ساعت</th>
+                                    <th class="p-3">فایل پیوست مشتری</th>
+                                    <th class="p-3">توضیحات</th>
+                                    <th class="p-3">وضعیت</th>
+                                    <th class="p-3">عملیات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsTableBody" class="divide-y divide-slate-200 text-xs"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- تب ۲: مدیریت مقالات رزومه و بارگذاری فایل‌های PDF، Word و سایر فرمت‌ها -->
+                <div id="tab_pubs" class="hidden space-y-6">
+                    <div class="bg-blue-50/70 p-5 rounded-2xl border border-blue-200 space-y-4">
+                        <h4 class="font-extrabold text-blue-950 text-sm">➕ افزودن مقاله / پژوهش جدید به همراه فایل‌های قابل دانلود (PDF, Word, ZIP و...)</h4>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">عنوان مقاله / پژوهش (فارسی) *</label>
+                                <input type="text" id="pub_title_fa" placeholder="مثلاً: معماری دو-مرحله‌ای گراف فضا-زمانی..." class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">عنوان مقاله (انگلیسی / ترکی - اختیاری)</label>
+                                <input type="text" id="pub_title_en" dir="ltr" placeholder="e.g., Two-Stage Spatio-Temporal Graph..." class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">دسته‌بندی / تگ علمی *</label>
+                                <input type="text" id="pub_tag_fa" placeholder="مثلاً: هوش مصنوعی و شبکه‌های عصبی گراف" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">توضیح کوتاه / ژورنال یا روش تحقیق</label>
+                                <input type="text" id="pub_sub_fa" placeholder="مثلاً: منتشرشده در ژورنال معتبر / پیاده‌سازی با پایتون" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-blue-900 mb-1">📂 انتخاب فایل‌های مقاله (امکان انتخاب همزمان فایل PDF، فایل Word .docx، کد و...)</label>
+                            <input type="file" id="pub_files_inp" multiple accept="*/*"
+                                class="block w-full text-xs text-slate-600 file:me-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-blue-600 file:text-white hover:file:bg-blue-700 cursor-pointer">
+                        </div>
+                        <button onclick="addNewPublication()" class="bg-blue-600 hover:bg-blue-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition shadow">
+                            💾 ذخیره مقاله و بارگذاری فایل‌ها در سایت
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="font-extrabold text-slate-800 text-sm">📄 لیست مقالات فعلی در سایت (امکان افزودن فایل جدید به هر مقاله یا حذف آن)</h4>
+                        <div id="adminPubsList" class="space-y-3"></div>
+                    </div>
+                </div>
+
+                <!-- تب ۳: مدیریت و افزودن فریلنسر به مجموعه Research Pro -->
+                <div id="tab_team" class="hidden space-y-6">
+                    <div class="bg-indigo-50/70 p-5 rounded-2xl border border-indigo-200 space-y-4">
+                        <h4 class="font-extrabold text-indigo-950 text-sm">👤 افزودن فریلنسر / پژوهشگر جدید به مجموعه Research Pro</h4>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">نام و نام خانوادگی فریلنسر *</label>
+                                <input type="text" id="fl_name" placeholder="مثلاً: مهندس سارا محمدی" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">سمت / تخصص اصلی *</label>
+                                <input type="text" id="fl_role" placeholder="مثلاً: پژوهشگر یادگیری ماشین و نگارش مقاله ISI" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">مهارت‌ها و نرم‌افزارها (با کاما جدا کنید) *</label>
+                                <input type="text" id="fl_skills" placeholder="Python, MATLAB, LaTeX, SPSS" class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-1">بیوگرافی کوتاه و سوابق فریلنسر</label>
+                            <textarea id="fl_bio" rows="2" placeholder="توضیح کوتاه درباره تجربه کاری، رشته تحصیلی و پروژه‌های انجام‌شده..." class="w-full px-3 py-2 rounded-xl border border-slate-300 text-xs"></textarea>
+                        </div>
+                        <button onclick="addNewFreelancer()" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition shadow">
+                            ➕ افزودن فریلنسر به صفحه اصلی سایت
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <h4 class="font-extrabold text-slate-800 text-sm">👥 لیست فریلنسرهای فعلی مجموعه</h4>
+                        <div id="adminFreelancersList" class="grid md:grid-cols-2 gap-4"></div>
+                    </div>
+                </div>
+
+                <!-- تب ۴: تغییر نام کاربری و رمز عبور مدیر + پشتیبان‌گیری -->
+                <div id="tab_security" class="hidden space-y-6">
+                    <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 space-y-4">
+                        <h4 class="font-extrabold text-slate-900 text-sm">🔑 تغییر نام کاربری و رمز عبور ورود به پنل مدیریت</h4>
+                        <p class="text-xs text-slate-500">هر زمان که بخواهید می‌توانید نام کاربری و رمز عبور اختصاصی خودتان را تغییر دهید.</p>
+                        <div class="grid md:grid-cols-3 gap-4 items-end">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">نام کاربری جدید</label>
+                                <input type="text" id="newAdminUser" dir="ltr" placeholder="مثلاً: dr_ahmadzadeh" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-mono">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 mb-1">رمز عبور جدید</label>
+                                <input type="password" id="newAdminPass" dir="ltr" placeholder="رمز عبور جدید" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs font-mono">
+                            </div>
+                            <button onclick="updateAdminCredentials()" class="bg-slate-900 hover:bg-blue-900 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition">
+                                ذخیره نام کاربری و رمز جدید
+                            </button>
+                        </div>
+                        <p id="credUpdateMsg" class="hidden text-xs text-emerald-600 font-bold"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- فوتر (Footer) -->
+    <footer class="bg-slate-950 text-slate-400 py-8 text-center text-xs mt-auto">
+        <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p data-i18n="footer_copy">© تمامی حقوق متعلق به مجموعه Research Pro (به مدیریت و سرپژوهشگری دکتر امیرمحمد احمدزاده) است.</p>
+            <p class="font-mono text-slate-300">
+                📞 <span data-i18n="footer_phone">شماره تماس مستقیم:</span>
+                <a href="tel:09144347801" class="text-blue-400 hover:underline font-bold">09144347801</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- اسکریپت کامل دیتابیس IndexedDB، مدیریت فایل‌های حجیم، سه زبانه و پنل ادمین -->
+    <script>
+        // ==========================================
+        // ۱. تنظیمات رمز عبور مدیر (قابل تغییر در پنل)
+        // ==========================================
+        const DEFAULT_ADMIN_USER = "admin";
+        const DEFAULT_ADMIN_PASS = "123456";
+
+        function getAdminCreds() {
+            const saved = localStorage.getItem("rp_admin_creds");
+            if (saved) return JSON.parse(saved);
+            return { user: DEFAULT_ADMIN_USER, pass: DEFAULT_ADMIN_PASS };
+        }
+
+        // ==========================================
+        // ۲. دیتابیس IndexedDB برای ذخیره فایل‌های PDF/Word/ZIP بدون محدودیت حجم
+        // ==========================================
+        const DB_NAME = "ResearchProDatabase";
+        const DB_VERSION = 1;
+        let dbInstance = null;
+
+        const initialPublications = [
+            {
+                id: 101,
+                tag_fa: "هوش مصنوعی و شبکه‌های عصبی گراف",
+                tag_en: "AI & Graph Neural Networks",
+                tag_tr: "Yapay Zeka ve Grafik Sinir Ağları",
+                title_fa: "معماری دو-مرحله‌ای گراف فضا-زمانی (ST-GNN) و رتبه‌بندی ریسک رفتاری برای کشف تقلب و مبارزه با پولشویی",
+                title_en: "Two-Stage Spatio-Temporal Graph (ST-GNN) and Behavioral Risk Ranking Architecture for Anti-Money Laundering",
+                title_tr: "Kara Para Aklamayı Önleme İçin İki Aşamalı ST-GNN ve Davranışsal Risk Sıralama Mimarisi",
+                sub_fa: "ارزیابی‌شده بر روی دیتاست‌های تراکنشی بین‌المللی با استفاده از PyTorch Geometric و مرکزیت هارمونیک",
+                sub_en: "Evaluated on large-scale financial datasets using PyTorch Geometric and Harmonic Closeness Centrality",
+                sub_tr: "PyTorch Geometric ve Harmonik Yakınlık Merkeziliği kullanılarak uluslararası veri setlerinde değerlendirilmiştir",
+                files: []
+            },
+            {
+                id: 102,
+                tag_fa: "مهندسی انرژی و شبیه‌سازی عددی",
+                tag_en: "Energy Engineering & PINNs",
+                tag_tr: "Enerji Mühendisliği ve PINNs",
+                title_fa: "بهینه‌سازی توپولوژی ذخیره انرژی حرارتی مبتنی بر ساختارهای TPMS و شبکه‌های عصبی آگاه از فیزیک (PINNs)",
+                title_en: "Topology Optimization of Thermal Energy Storage Using TPMS Structures and Physics-Informed Neural Networks",
+                title_tr: "TPMS Yapıları ve Fizik Bilgi Destekli Sinir Ağları (PINNs) ile Termal Enerji Depolama Topoloji Optimizasyonu",
+                sub_fa: "مدل‌سازی ریاضی، تحلیل انتقال حرارت و برداشت انرژی در مقیاس میکرو و نانو",
+                sub_en: "Mathematical modeling, heat transfer simulation, and micro/nano-scale energy harvesting",
+                sub_tr: "Matematiksel modelleme, ısı transferi analizi ve mikro/nano ölçekli enerji hasadı",
+                files: []
+            },
+            {
+                id: 103,
+                tag_fa: "مهندسی عمران و معماری پایدار",
+                tag_en: "Civil & Sustainable Engineering",
+                tag_tr: "İnşaat Mühendisliği ve Sürdürülebilirlik",
+                title_fa: "طراحی پایدار، بهینه‌سازی مصرف انرژی و رویکردهای معماری سبز در سازه‌های عمومی",
+                title_en: "Sustainable Architecture, Green Building Strategies, and Energy Efficiency Optimization in Public Structures",
+                title_tr: "Kamu Yapılarında Sürdürülebilir Mimari, Yeşil Bina Yaklaşımları ve Enerji Verimliliği Optimizasyonu",
+                sub_fa: "تحلیل اقلیمی، بازطراحی سازه‌ای و ارتقای بهره‌وری انرژی",
+                sub_en: "Climate analysis, adaptive structural redesign, and sustainable energy performance",
+                sub_tr: "İklim analizi, yapısal yeniden tasarım ve sürdürülebilir enerji performansı",
+                files: []
+            }
+        ];
+
+        const initialFreelancers = [
+            {
+                id: 201,
+                name: "دکتر امیرمحمد احمدزاده (Dr. Amirmohammad Ahmadzadeh)",
+                role: "مدیر و سرپژوهشگر مجموعه (Director & Chief Researcher)",
+                skills: "ST-GNN, PINNs, Python, MATLAB, ISI Papers, Thesis Advisory",
+                bio: "مدیریت علمی و نظارت مستقیم بر تمامی پروژه‌های پژوهشی، مقالات Q1-Q4، پایان‌نامه‌ها و شبیه‌سازی‌های مهندسی در مجموعه Research Pro."
+            }
+        ];
+
+        function openDatabase() {
+            return new Promise((resolve, reject) => {
+                if (dbInstance) return resolve(dbInstance);
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onupgradeneeded = (e) => {
+                    const db = e.target.result;
+                    if (!db.objectStoreNames.contains("appointments")) {
+                        db.createObjectStore("appointments", { keyPath: "id" });
+                    }
+                    if (!db.objectStoreNames.contains("publications")) {
+                        const pubStore = db.createObjectStore("publications", { keyPath: "id" });
+                        initialPublications.forEach(p => pubStore.put(p));
+                    }
+                    if (!db.objectStoreNames.contains("freelancers")) {
+                        const flStore = db.createObjectStore("freelancers", { keyPath: "id" });
+                        initialFreelancers.forEach(f => flStore.put(f));
+                    }
+                };
+                request.onsuccess = (e) => {
+                    dbInstance = e.target.result;
+                    resolve(dbInstance);
+                };
+                request.onerror = (e) => reject(e.target.error);
+            });
+        }
+
+        async function getAllItems(storeName) {
+            const db = await openDatabase();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(storeName, "readonly");
+                const store = tx.objectStore(storeName);
+                const req = store.getAll();
+                req.onsuccess = () => resolve(req.result || []);
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        async function putItem(storeName, item) {
+            const db = await openDatabase();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(storeName, "readwrite");
+                const store = tx.objectStore(storeName);
+                const req = store.put(item);
+                req.onsuccess = () => resolve(req.result);
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        async function deleteItemById(storeName, id) {
+            const db = await openDatabase();
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction(storeName, "readwrite");
+                const store = tx.objectStore(storeName);
+                const req = store.delete(id);
+                req.onsuccess = () => resolve();
+                req.onerror = () => reject(req.error);
+            });
+        }
+
+        function fileToDataURL(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve({
+                    name: file.name,
+                    type: file.type || "application/octet-stream",
+                    size: (file.size / 1024).toFixed(1) + " KB",
+                    dataUrl: reader.result
+                });
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // ==========================================
+        // ۳. دیکشنری سه زبانه (فارسی، انگلیسی، ترکی استانبولی)
+        // ==========================================
+        const translations = {
+            fa: {
+                dir: "rtl",
+                brand_sub: "به مدیریت و سرپژوهشگری دکتر امیرمحمد احمدزاده",
+                nav_about: "معرفی مجموعه",
+                nav_services: "خدمات تخصصی",
+                nav_pubs: "رزومه و مقالات",
+                nav_team: "تیم فریلنسرها",
+                nav_booking: "ثبت سفارش و نوبت",
+                nav_admin: "پنل مدیریت",
+                hero_role: "مدیر و سرپژوهشگر: دکتر امیرمحمد احمدزاده",
+                hero_title: "مجموعه تخصصی Research Pro",
+                hero_subtitle: "دکتر امیرمحمد احمدزاده — مدیر و سرپژوهشگر (Director & Chief Researcher)",
+                hero_desc: "مرکز بین‌المللی مشاوره، نگارش و چاپ مقالات معتبر علمی (ISI, Scopus, IEEE)، هدایت تخصصی پایان‌نامه‌های کارشناسی ارشد و دکتری، و اجرای پروژه‌های فریلنسری مهندسی، شبیه‌سازی و هوش مصنوعی (Python & MATLAB) به سه زبان فارسی، انگلیسی و ترکی استانبولی.",
+                hero_cta_book: "📅 ثبت سفارش و رزرو نوبت مشاوره",
+                hero_phone_label: "تماس مستقیم:",
+                srv_heading: "خدمات تخصصی مجموعه Research Pro",
+                srv_subheading: "ارائه خدمات پژوهشی، آکادمیک و فریلنسری در سطح بین‌المللی به سه زبان فارسی، انگلیسی و ترکی استانبولی",
+                srv1_title: "مشاوره و نگارش مقالات علمی (ISI / Scopus)",
+                srv1_desc: "مشاوره صفر تا صد استخراج مقاله از پایان‌نامه، نگارش آکادمیک، انتخاب ژورنال، سابمیت، داوری (Revise) و پیاده‌سازی کدهای پژوهشی برای ژورنال‌های معتبر بین‌المللی Q1 تا Q4.",
+                srv2_title: "مشاوره تخصصی پایان‌نامه و رساله",
+                srv2_desc: "انتخاب موضوع نوآورانه، تدوین پروپوزال، مدل‌سازی، تحلیل آماری و شبیه‌سازی، نگارش فصول و آماده‌سازی جلسه دفاع برای مقاطع کارشناسی ارشد و دکتری در دانشگاه‌های داخل و خارج.",
+                srv3_title: "پروژه‌های فریلنسری و شبیه‌سازی مهندسی",
+                srv3_desc: "اجرای پروژه‌های فریلنسری بین‌المللی در حوزه یادگیری ماشین، شبکه‌های عصبی گراف (GNN)، شبکه‌های عصبی آگاه از فیزیک (PINNs)، بهینه‌سازی انرژی و برنامه‌نویسی تخصصی Python و MATLAB.",
+                pub_heading: "رزومه پژوهشی، مقالات و فایل‌های علمی",
+                pub_subheading: "فهرست پژوهش‌های سرپژوهشگر مجموعه به همراه دانلود مستقیم فایل‌های PDF، Word و مستندات",
+                pub_admin_btn: "➕ افزودن مقاله یا بارگذاری فایل (در پنل مدیریت)",
+                team_heading: "تیم فریلنسرها و پژوهشگران Research Pro",
+                team_subheading: "متخصصان و فریلنسرهای همکار تحت نظارت دکتر امیرمحمد احمدزاده (مدیر و سرپژوهشگر)",
+                team_admin_btn: "👤 افزودن فریلنسر جدید به مجموعه (پنل مدیریت)",
+                book_heading: "ثبت درخواست مشاوره، پروژه و رزرو نوبت",
+                book_subheading: "تاریخ مشاوره را از پنجره تقویم انتخاب کنید، فایل پروژه یا مقاله خود را بارگذاری نمایید یا مستقیماً تماس بگیرید:",
+                book_phone_title: "شماره تماس مستقیم مدیر و سرپژوهشگر:",
+                lbl_name: "نام و نام خانوادگی متقاضی *",
+                lbl_phone: "شماره موبایل / واتساپ *",
+                lbl_service: "نوع درخواست / مشاوره *",
+                opt_srv1: "مشاوره و نگارش مقاله علمی (ISI / Scopus)",
+                opt_srv2: "مشاوره پایان‌نامه و رساله (ارشد / دکتری)",
+                opt_srv3: "پروژه فریلنسری و شبیه‌سازی (Python / MATLAB)",
+                lbl_date: "انتخاب تاریخ (پنجره تقویم) *",
+                lbl_time: "بازه زمانی مشاوره *",
+                opt_t1: "صبح (۱۰:۰۰ تا ۱۲:۰۰)",
+                opt_t2: "عصر (۱۵:۰۰ تا ۱۸:۰۰)",
+                opt_t3: "شب (۱۹:۰۰ تا ۲۲:۰۰)",
+                lbl_customer_file: "📎 بارگذاری فایل پیوست توسط مشتری (PDF، Word، پروپوزال، مقاله، کد یا ZIP - اختیاری)",
+                lbl_customer_file_hint: "می‌توانید فایل پروپوزال، پیش‌نویس مقاله، دیتاست یا مستندات پروژه خود را ضمیمه کنید تا در پنل مدیریت بررسی شود.",
+                lbl_notes: "توضیحات تکمیلی پروژه، رشته تحصیلی یا موضوع مقاله",
+                btn_submit: "ثبت قطعی درخواست و ارسال فایل",
+                footer_copy: "© تمامی حقوق متعلق به مجموعه Research Pro (به مدیریت و سرپژوهشگری دکتر امیرمحمد احمدزاده) است.",
+                footer_phone: "شماره تماس مستقیم:",
+                success_msg: "✅ درخواست و فایل پیوست شما با موفقیت در سیستم Research Pro ثبت شد! به زودی با شما تماس خواهیم گرفت.",
+                no_files_badge: "بدون فایل پیوست (قابل بارگذاری در پنل مدیریت)"
+            },
+            en: {
+                dir: "ltr",
+                brand_sub: "Directed by Dr. Amirmohammad Ahmadzadeh (Chief Researcher)",
+                nav_about: "About Us",
+                nav_services: "Services",
+                nav_pubs: "Publications & Files",
+                nav_team: "Freelance Team",
+                nav_booking: "Book & Upload",
+                nav_admin: "Admin Panel",
+                hero_role: "Director & Chief Researcher: Dr. Amirmohammad Ahmadzadeh",
+                hero_title: "Research Pro Platform",
+                hero_subtitle: "Dr. Amirmohammad Ahmadzadeh — Founder, Director & Chief Researcher",
+                hero_desc: "International platform for Q1–Q4 journal paper consulting & publication (ISI, Scopus, IEEE), M.Sc. & Ph.D. thesis advisory, and freelance AI, simulation, and engineering projects (Python & MATLAB) in English, Persian, and Turkish.",
+                hero_cta_book: "📅 Book Consultation & Submit Project",
+                hero_phone_label: "Direct Call:",
+                srv_heading: "Research Pro Specialized Services",
+                srv_subheading: "Delivering international academic research, thesis advisory, and freelance engineering in EN, FA & TR",
+                srv1_title: "Academic Paper & Journal Consulting (ISI / Scopus)",
+                srv1_desc: "End-to-end guidance on paper extraction, academic writing, journal selection, submission, peer-review revision, and research code implementation for Q1–Q4 international journals.",
+                srv2_title: "M.Sc. & Ph.D. Thesis / Dissertation Advisory",
+                srv2_desc: "Topic selection, proposal writing, mathematical modeling, simulation, statistical analysis, chapter drafting, and defense preparation for Master's and Doctoral candidates.",
+                srv3_title: "Freelance Engineering & AI Simulation Projects",
+                srv3_desc: "Execution of international freelance projects in Machine Learning, Spatio-Temporal Graph Neural Networks (ST-GNN), Physics-Informed Neural Networks (PINNs), Energy Systems, Python, and MATLAB.",
+                pub_heading: "Research Resume, Publications & Downloadable Files",
+                pub_subheading: "Selected publications by our Chief Researcher with direct PDF, Word (.docx), and supplementary file downloads",
+                pub_admin_btn: "➕ Add Publication / Upload PDF & Word (Admin Panel)",
+                team_heading: "Research Pro Freelance & Research Team",
+                team_subheading: "Specialized freelancers and researchers led by Dr. Amirmohammad Ahmadzadeh (Director & Chief Researcher)",
+                team_admin_btn: "👤 Add Freelancer to Team (Admin Panel)",
+                book_heading: "Request Consultation, Book Slot & Upload Files",
+                book_subheading: "Choose your preferred date from the popup calendar, attach your project/paper file, or call directly:",
+                book_phone_title: "Director & Chief Researcher Direct Line:",
+                lbl_name: "Full Name *",
+                lbl_phone: "Phone / WhatsApp Number *",
+                lbl_service: "Requested Service *",
+                opt_srv1: "Journal Paper / Article Consulting (ISI / Scopus)",
+                opt_srv2: "Thesis & Dissertation Advisory (M.Sc. / Ph.D.)",
+                opt_srv3: "Freelance Project & Simulation (Python / MATLAB)",
+                lbl_date: "Preferred Date (Popup Calendar) *",
+                lbl_time: "Preferred Time Slot *",
+                opt_t1: "Morning (10:00 - 12:00)",
+                opt_t2: "Afternoon (15:00 - 18:00)",
+                opt_t3: "Evening (19:00 - 22:00)",
+                lbl_customer_file: "📎 Upload Project / Paper File (PDF, Word, Proposal, Code, ZIP - Optional)",
+                lbl_customer_file_hint: "Attach your proposal, draft manuscript, dataset, or project description for review in our Admin Panel.",
+                lbl_notes: "Project Details, Research Topic, or Field of Study",
+                btn_submit: "Submit Request & Upload File",
+                footer_copy: "© All rights reserved by Research Pro (Directed by Dr. Amirmohammad Ahmadzadeh).",
+                footer_phone: "Direct Contact:",
+                success_msg: "✅ Your consultation request and attached file have been registered! We will contact you shortly.",
+                no_files_badge: "No attached files yet (Upload via Admin Panel)"
+            },
+            tr: {
+                dir: "ltr",
+                brand_sub: "Direktör ve Baş Araştırmacı: Dr. Amirmohammad Ahmadzadeh",
+                nav_about: "Hakkımızda",
+                nav_services: "Hizmetler",
+                nav_pubs: "Yayınlar ve Dosyalar",
+                nav_team: "Freelance Ekibi",
+                nav_booking: "Randevu ve Dosya Yükle",
+                nav_admin: "Yönetici Paneli",
+                hero_role: "Direktör ve Baş Araştırmacı: Dr. Amirmohammad Ahmadzadeh",
+                hero_title: "Research Pro Platformu",
+                hero_subtitle: "Dr. Amirmohammad Ahmadzadeh — Kurucu, Direktör ve Baş Araştırmacı",
+                hero_desc: "Uluslararası indeksli dergilerde (ISI, Scopus, IEEE) makale danışmanlığı, Yüksek Lisans ve Doktora tez danışmanlığı ile Python ve MATLAB tabanlı yapay zeka ve freelance mühendislik projeleri merkezi.",
+                hero_cta_book: "📅 Randevu Al ve Proje Dosyası Gönder",
+                hero_phone_label: "Doğrudan İletişim:",
+                srv_heading: "Research Pro Uzmanlık Hizmetleri",
+                srv_subheading: "Türkçe, İngilizce ve Farsça dillerinde uluslararası akademik makale, tez ve freelance mühendislik desteği",
+                srv1_title: "Akademik Makale ve Dergi Danışmanlığı (ISI / Scopus)",
+                srv1_desc: "Tezden makale üretimi, akademik yazım, Q1-Q4 dergi seçimi, makale gönderimi (submission), hakem revizyonları ve analiz kodlarının hazırlanması süreçlerinde uçtan uca danışmanlık.",
+                srv2_title: "Yüksek Lisans ve Doktora Tez Danışmanlığı",
+                srv2_desc: "Özgün tez konusu belirleme, tez önerisi (proposal) hazırlama, modelleme ve simülasyon, bölüm yazımı ve tez savunma sınavına hazırlık desteği.",
+                srv3_title: "Freelance Mühendislik, Yapay Zeka ve Simülasyon",
+                srv3_desc: "Makine Öğrenmesi, Grafik Sinir Ağları (GNN), Fizik Bilgi Destekli Sinir Ağları (PINNs), enerji optimizasyonu ile Python ve MATLAB projelerinin profesyonel olarak yürütülmesi.",
+                pub_heading: "Araştırma Özgeçmişi, Makaleler ve İndirilebilir Dosyalar",
+                pub_subheading: "Baş Araştırmacımızın seçilmiş yayınları ve doğrudan indirilebilir PDF, Word (.docx) ve ek dosyaları",
+                pub_admin_btn: "➕ Makale Ekle / PDF ve Word Yükle (Yönetici Paneli)",
+                team_heading: "Research Pro Freelance ve Araştırmacı Ekibi",
+                team_subheading: "Dr. Amirmohammad Ahmadzadeh (Direktör ve Baş Araştırmacı) yönetimindeki uzman freelance ekibimiz",
+                team_admin_btn: "👤 Ekibe Yeni Freelancer Ekle (Yönetici Paneli)",
+                book_heading: "Danışmanlık Talebi, Randevu ve Dosya Yükleme",
+                book_subheading: "Açılır takvimden tarih seçin, proje/makale dosyanızı yükleyin veya doğrudan telefonla arayın:",
+                book_phone_title: "Direktör ve Baş Araştırmacı Doğrudan Hat:",
+                lbl_name: "Ad Soyad *",
+                lbl_phone: "Telefon / WhatsApp Numarası *",
+                lbl_service: "Danışmanlık / Proje Konusu *",
+                opt_srv1: "Akademik Makale Danışmanlığı (ISI / Scopus)",
+                opt_srv2: "Yüksek Lisans / Doktora Tez Danışmanlığı",
+                opt_srv3: "Freelance Proje ve Simülasyon (Python / MATLAB)",
+                lbl_date: "Tarih Seçimi (Açılır Takvim) *",
+                lbl_time: "Saat Aralığı *",
+                opt_t1: "Sabah (10:00 - 12:00)",
+                opt_t2: "Öğleden Sonra (15:00 - 18:00)",
+                opt_t3: "Akşam (19:00 - 22:00)",
+                lbl_customer_file: "📎 Proje / Makale Dosyası Yükle (PDF, Word, Tez Önerisi, Kod, ZIP - İsteğe Bağlı)",
+                lbl_customer_file_hint: "Yönetici panelinde incelenmesi için tez önerisi, makale taslağı veya proje dosyanızı ekleyebilirsiniz.",
+                lbl_notes: "Proje Detayları, Tez/Makale Konusu veya Bölümünüz",
+                btn_submit: "Talebi Onayla ve Dosyayı Gönder",
+                footer_copy: "© Tüm hakları Research Pro (Direktör ve Baş Araştırmacı: Dr. Amirmohammad Ahmadzadeh) platformuna aittir.",
+                footer_phone: "Doğrudan İletişim:",
+                success_msg: "✅ Randevu talebiniz ve ekli dosyanız başarıyla kaydedildi! En kısa sürede sizinle iletişime geçilecektir.",
+                no_files_badge: "Henüz dosya eklenmedi (Yönetici panelinden yüklenebilir)"
+            }
+        };
+
+        let currentLang = 'fa';
+        let fpInstance = null;
+
+        function initCalendar(lang) {
+            if (fpInstance) fpInstance.destroy();
+            let localeSetting = "default";
+            if (lang === 'fa' && window.flatpickr.l10ns.fa) localeSetting = window.flatpickr.l10ns.fa;
+            if (lang === 'tr' && window.flatpickr.l10ns.tr) localeSetting = window.flatpickr.l10ns.tr;
+
+            fpInstance = flatpickr("#inp_date", {
+                minDate: "today",
+                dateFormat: "Y-m-d",
+                locale: localeSetting,
+                disableMobile: true
+            });
+        }
+
+        async function setLanguage(lang) {
+            currentLang = lang;
+            const dict = translations[lang];
+            const htmlRoot = document.getElementById('htmlRoot');
+            htmlRoot.setAttribute('lang', lang);
+            htmlRoot.setAttribute('dir', dict.dir);
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) el.textContent = dict[key];
+            });
+
+            ['fa', 'en', 'tr'].forEach(l => {
+                const btn = document.getElementById('btn-' + l);
+                if (l === lang) {
+                    btn.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition bg-blue-600 text-white shadow-sm";
+                } else {
+                    btn.className = "px-2.5 py-1 rounded-lg text-xs font-bold transition text-slate-600 hover:text-slate-900";
+                }
+            });
+
+            initCalendar(lang);
+            await renderPublicPublications();
+            await renderPublicFreelancers();
+        }
+
+        // ==========================================
+        // ۴. رندر کردن مقالات و فایل‌های پیوست (PDF, Word, ...) در صفحه اصلی
+        // ==========================================
+        async function renderPublicPublications() {
+            const container = document.getElementById('publicationsContainer');
+            const pubs = await getAllItems("publications");
+            pubs.sort((a, b) => b.id - a.id);
+
+            if (pubs.length === 0) {
+                container.innerHTML = `<div class="p-6 text-center text-slate-400">هنوز مقاله‌ای ثبت نشده است.</div>`;
+                return;
+            }
+
+            container.innerHTML = pubs.map(p => {
+                const tag = currentLang === 'fa' ? p.tag_fa : (currentLang === 'tr' ? (p.tag_tr || p.tag_en || p.tag_fa) : (p.tag_en || p.tag_fa));
+                const title = currentLang === 'fa' ? p.title_fa : (currentLang === 'tr' ? (p.title_tr || p.title_en || p.title_fa) : (p.title_en || p.title_fa));
+                const sub = currentLang === 'fa' ? p.sub_fa : (currentLang === 'tr' ? (p.sub_tr || p.sub_en || p.sub_fa) : (p.sub_en || p.sub_fa));
+
+                let filesHtml = "";
+                if (p.files && p.files.length > 0) {
+                    filesHtml = `<div class="flex flex-wrap gap-2 mt-3 md:mt-0">` + p.files.map((f, idx) => {
+                        const isPdf = f.name.toLowerCase().endsWith('.pdf');
+                        const isWord = f.name.toLowerCase().endsWith('.doc') || f.name.toLowerCase().endsWith('.docx');
+                        const badgeColor = isPdf ? 'bg-red-50 text-red-700 border-red-200 hover:bg-red-100' :
+                                           (isWord ? 'bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100' : 'bg-slate-100 text-slate-700 border-slate-300 hover:bg-slate-200');
+                        const icon = isPdf ? '📕 PDF' : (isWord ? '📘 Word' : '📎 File');
+                        return `<a href="${f.dataUrl}" download="${f.name}" class="inline-flex items-center gap-1.5 text-xs font-bold px-3.5 py-2 rounded-xl border transition ${badgeColor}">
+                            <span>${icon}:</span>
+                            <span class="max-w-[160px] truncate" dir="ltr">${f.name}</span>
+                        </a>`;
+                    }).join('') + `</div>`;
+                } else {
+                    filesHtml = `<span class="text-[11px] text-slate-400 bg-white px-3 py-1.5 rounded-lg border border-slate-200">${translations[currentLang].no_files_badge}</span>`;
+                }
+
+                return `
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:border-blue-300 transition">
+                    <div class="flex-1">
+                        <span class="text-xs font-bold bg-blue-100 text-blue-800 px-3 py-1 rounded-full">${tag}</span>
+                        <h3 class="font-bold text-slate-900 mt-2.5 text-base">${title}</h3>
+                        <p class="text-xs text-slate-500 mt-1">${sub || ''}</p>
+                    </div>
+                    <div class="shrink-0">
+                        ${filesHtml}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // ==========================================
+        // ۵. رندر کردن تیم فریلنسرهای مجموعه در صفحه اصلی
+        // ==========================================
+        async function renderPublicFreelancers() {
+            const container = document.getElementById('freelancersContainer');
+            const list = await getAllItems("freelancers");
+
+            container.innerHTML = list.map(f => {
+                const skillsBadges = (f.skills || "").split(',').map(s => s.trim()).filter(Boolean).map(s =>
+                    `<span class="text-[11px] bg-indigo-50 text-indigo-700 px-2.5 py-0.5 rounded-md font-mono border border-indigo-100">${s}</span>`
+                ).join(' ');
+
+                return `
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-blue-900 to-indigo-600 text-white flex items-center justify-center font-bold text-lg shrink-0">
+                                👤
+                            </div>
+                            <div>
+                                <h3 class="font-extrabold text-slate-900 text-base">${f.name}</h3>
+                                <p class="text-xs text-blue-600 font-bold">${f.role}</p>
+                            </div>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-4">${f.bio || ''}</p>
+                    </div>
+                    <div class="flex flex-wrap gap-1.5 pt-3 border-t border-slate-100" dir="ltr">
+                        ${skillsBadges}
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // ==========================================
+        // ۶. ثبت سفارش مشتری به همراه آپلود فایل مشتری
+        // ==========================================
+        async function handleBookingSubmit(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            submitBtn.disabled = true;
+
+            const name = document.getElementById('inp_name').value.trim();
+            const phone = document.getElementById('inp_phone').value.trim();
+            const service = document.getElementById('inp_service').value;
+            const date = document.getElementById('inp_date').value.trim();
+            const time = document.getElementById('inp_time').value;
+            const notes = document.getElementById('inp_notes').value.trim();
+            const fileInp = document.getElementById('inp_customer_file');
+
+            if (!date) {
+                alert(currentLang === 'fa' ? 'لطفاً تاریخ مشاوره را از پنجره تقویم انتخاب کنید.' : 'Please select a date from the popup calendar.');
+                submitBtn.disabled = false;
+                return;
+            }
+
+            let attachedFile = null;
+            if (fileInp.files && fileInp.files.length > 0) {
+                attachedFile = await fileToDataURL(fileInp.files[0]);
+            }
+
+            const newOrder = {
+                id: Date.now(),
+                name,
+                phone,
+                service,
+                date,
+                time,
+                notes: notes || "-",
+                status: "در انتظار بررسی",
+                lang: currentLang.toUpperCase(),
+                attachedFile,
+                createdAt: new Date().toLocaleString('fa-IR')
+            };
+
+            await putItem("appointments", newOrder);
+
+            const alertBox = document.getElementById('bookingAlert');
+            alertBox.textContent = translations[currentLang].success_msg;
+            alertBox.classList.remove('hidden');
+            document.getElementById('appointmentForm').reset();
+            submitBtn.disabled = false;
+            setTimeout(() => alertBox.classList.add('hidden'), 8000);
+        }
+
+        // ==========================================
+        // ۷. توابع پنل مدیریت (ورود، تب‌ها، آپلود فایل مقالات، افزودن فریلنسر، تغییر رمز)
+        // ==========================================
+        function openAdminModal() {
+            document.getElementById('adminModal').classList.remove('hidden');
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').classList.add('hidden');
+        }
+
+        function switchAdminTab(tabId) {
+            ['tab_orders', 'tab_pubs', 'tab_team', 'tab_security'].forEach(t => {
+                document.getElementById(t).classList.add('hidden');
+                const btn = document.getElementById('btn_' + t);
+                btn.className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+            });
+            document.getElementById(tabId).classList.remove('hidden');
+            document.getElementById('btn_' + tabId).className = "px-4 py-2.5 rounded-xl text-xs font-bold bg-blue-600 text-white transition shadow-sm";
+        }
+
+        async function loginAdmin() {
+            const u = document.getElementById('adminUserInp').value.trim();
+            const p = document.getElementById('adminPassInp').value.trim();
+            const creds = getAdminCreds();
+
+            if (u === creds.user && p === creds.pass) {
+                document.getElementById('loginError').classList.add('hidden');
+                document.getElementById('adminLoginSection').classList.add('hidden');
+                document.getElementById('adminDashboardSection').classList.remove('hidden');
+                document.getElementById('newAdminUser').value = creds.user;
+                await refreshAdminAll();
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function logoutAdmin() {
+            document.getElementById('adminDashboardSection').classList.add('hidden');
+            document.getElementById('adminLoginSection').classList.remove('hidden');
+            document.getElementById('adminPassInp').value = "";
+        }
+
+        function updateAdminCredentials() {
+            const newU = document.getElementById('newAdminUser').value.trim();
+            const newP = document.getElementById('newAdminPass').value.trim();
+            if (!newU || !newP) {
+                alert("لطفاً نام کاربری و رمز عبور جدید را وارد کنید.");
+                return;
+            }
+            localStorage.setItem("rp_admin_creds", JSON.stringify({ user: newU, pass: newP }));
+            const msg = document.getElementById('credUpdateMsg');
+            msg.textContent = "✅ نام کاربری و رمز عبور جدید شما با موفقیت ذخیره شد!";
+            msg.classList.remove('hidden');
+            setTimeout(() => msg.classList.add('hidden'), 4000);
+        }
+
+        async function refreshAdminAll() {
+            await renderAppointmentsTable();
+            await renderAdminPublications();
+            await renderAdminFreelancers();
+            await renderPublicPublications();
+            await renderPublicFreelancers();
+        }
+
+        // --- الف) جدول سفارش‌ها و فایل‌های مشتریان ---
+        async function renderAppointmentsTable() {
+            const tbody = document.getElementById('appointmentsTableBody');
+            const list = await getAllItems("appointments");
+            list.sort((a, b) => b.id - a.id);
+
+            if (list.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="8" class="p-6 text-center text-slate-400">هنوز هیچ سفارشی ثبت نشده است.</td></tr>`;
+                return;
+            }
+
+            tbody.innerHTML = list.map(item => {
+                let fileCell = `<span class="text-slate-400">-</span>`;
+                if (item.attachedFile && item.attachedFile.dataUrl) {
+                    fileCell = `<a href="${item.attachedFile.dataUrl}" download="${item.attachedFile.name}" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold border border-blue-200">
+                        <span>📥 دانلود فایل</span>
+                        <span class="max-w-[100px] truncate font-mono" dir="ltr">(${item.attachedFile.name})</span>
+                    </a>`;
+                }
+
+                return `
+                <tr class="hover:bg-slate-50">
+                    <td class="p-3 font-bold text-slate-800">${item.name}</td>
+                    <td class="p-3 font-mono" dir="ltr"><a href="tel:${item.phone}" class="text-blue-600 underline">${item.phone}</a></td>
+                    <td class="p-3">${item.service}</td>
+                    <td class="p-3 font-mono text-blue-700 font-bold">${item.date} | ${item.time}</td>
+                    <td class="p-3">${fileCell}</td>
+                    <td class="p-3 max-w-xs truncate" title="${item.notes}">${item.notes}</td>
+                    <td class="p-3">
+                        <span class="px-2.5 py-1 rounded-full text-xs font-bold ${item.status === 'تایید شده' ? 'bg-emerald-100 text-emerald-800' : 'bg-amber-100 text-amber-800'}">
+                            ${item.status}
+                        </span>
+                    </td>
+                    <td class="p-3 flex gap-1.5">
+                        <button onclick="toggleAppointmentStatus(${item.id})" class="px-2.5 py-1 bg-blue-100 hover:bg-blue-200 text-blue-700 rounded-lg font-bold">تغییر وضعیت</button>
+                        <button onclick="deleteAppointment(${item.id})" class="px-2.5 py-1 bg-rose-100 hover:bg-rose-200 text-rose-700 rounded-lg font-bold">حذف</button>
+                    </td>
+                </tr>`;
+            }).join('');
+        }
+
+        async function toggleAppointmentStatus(id) {
+            const list = await getAllItems("appointments");
+            const target = list.find(i => i.id === id);
+            if (target) {
+                target.status = target.status === "تایید شده" ? "در انتظار بررسی" : "تایید شده";
+                await putItem("appointments", target);
+                await renderAppointmentsTable();
+            }
+        }
+
+        async function deleteAppointment(id) {
+            if (!confirm("آیا از حذف این درخواست مطمئن هستید؟")) return;
+            await deleteItemById("appointments", id);
+            await renderAppointmentsTable();
+        }
+
+        async function exportAppointmentsCSV() {
+            const list = await getAllItems("appointments");
+            if (list.length === 0) {
+                alert("داده‌ای برای خروجی وجود ندارد.");
+                return;
+            }
+            const headers = ["Name", "Phone", "Service", "Date", "Time", "AttachedFile", "Notes", "Status"];
+            const rows = list.map(i => [
+                `"${i.name}"`, `"${i.phone}"`, `"${i.service}"`, `"${i.date}"`, `"${i.time}"`,
+                `"${i.attachedFile ? i.attachedFile.name : 'None'}"`, `"${i.notes}"`, `"${i.status}"`
+            ]);
+            const csvContent = "\uFEFF" + [headers.join(","), ...rows.map(r => r.join(","))].join("\n");
+            const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "ResearchPro_Orders.csv";
+            a.click();
+        }
+
+        // --- ب) مدیریت مقالات و آپلود فایل‌های PDF / Word / All ---
+        async function addNewPublication() {
+            const title_fa = document.getElementById('pub_title_fa').value.trim();
+            const title_en = document.getElementById('pub_title_en').value.trim();
+            const tag_fa = document.getElementById('pub_tag_fa').value.trim();
+            const sub_fa = document.getElementById('pub_sub_fa').value.trim();
+            const fileInput = document.getElementById('pub_files_inp');
+
+            if (!title_fa || !tag_fa) {
+                alert("لطفاً عنوان مقاله و دسته‌بندی علمی را وارد کنید.");
+                return;
+            }
+
+            const uploadedFiles = [];
+            if (fileInput.files && fileInput.files.length > 0) {
+                for (let i = 0; i < fileInput.files.length; i++) {
+                    const fData = await fileToDataURL(fileInput.files[i]);
+                    uploadedFiles.push(fData);
+                }
+            }
+
+            const newPub = {
+                id: Date.now(),
+                tag_fa,
+                tag_en: tag_fa,
+                tag_tr: tag_fa,
+                title_fa,
+                title_en: title_en || title_fa,
+                title_tr: title_en || title_fa,
+                sub_fa,
+                sub_en: sub_fa,
+                sub_tr: sub_fa,
+                files: uploadedFiles
+            };
+
+            await putItem("publications", newPub);
+            document.getElementById('pub_title_fa').value = "";
+            document.getElementById('pub_title_en').value = "";
+            document.getElementById('pub_tag_fa').value = "";
+            document.getElementById('pub_sub_fa').value = "";
+            fileInput.value = "";
+            await refreshAdminAll();
+            alert("✅ مقاله جدید به همراه فایل‌های پیوست با موفقیت به سایت اضافه شد!");
+        }
+
+        async function uploadFilesToExistingPub(pubId, inputEl) {
+            if (!inputEl.files || inputEl.files.length === 0) return;
+            const pubs = await getAllItems("publications");
+            const target = pubs.find(p => p.id === pubId);
+            if (!target) return;
+
+            target.files = target.files || [];
+            for (let i = 0; i < inputEl.files.length; i++) {
+                const fData = await fileToDataURL(inputEl.files[i]);
+                target.files.push(fData);
+            }
+            await putItem("publications", target);
+            await refreshAdminAll();
+            alert("✅ فایل‌های جدید (PDF/Word/...) با موفقیت به این مقاله پیوست شدند!");
+        }
+
+        async function removeFileFromPub(pubId, fileIdx) {
+            const pubs = await getAllItems("publications");
+            const target = pubs.find(p => p.id === pubId);
+            if (!target || !target.files) return;
+            target.files.splice(fileIdx, 1);
+            await putItem("publications", target);
+            await refreshAdminAll();
+        }
+
+        async function deletePublication(pubId) {
+            if (!confirm("آیا از حذف این مقاله مطمئن هستید؟")) return;
+            await deleteItemById("publications", pubId);
+            await refreshAdminAll();
+        }
+
+        async function renderAdminPublications() {
+            const container = document.getElementById('adminPubsList');
+            const pubs = await getAllItems("publications");
+            pubs.sort((a, b) => b.id - a.id);
+
+            container.innerHTML = pubs.map(p => {
+                const existingFiles = (p.files || []).map((f, idx) => `
+                    <span class="inline-flex items-center gap-1.5 bg-blue-50 text-blue-800 border border-blue-200 px-2.5 py-1 rounded-lg text-xs font-mono">
+                        <a href="${f.dataUrl}" download="${f.name}" class="underline">${f.name}</a>
+                        <button onclick="removeFileFromPub(${p.id}, ${idx})" class="text-rose-600 font-bold hover:text-rose-800" title="حذف فایل">&times;</button>
+                    </span>
+                `).join(' ');
+
+                return `
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+                    <div class="space-y-1 flex-1">
+                        <span class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded">${p.tag_fa}</span>
+                        <h5 class="font-bold text-slate-900 text-xs md:text-sm">${p.title_fa}</h5>
+                        <div class="flex flex-wrap gap-2 pt-1">${existingFiles || '<span class="text-xs text-slate-400">فایلی بارگذاری نشده است</span>'}</div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2 shrink-0">
+                        <label class="cursor-pointer bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-2 rounded-xl transition">
+                            <span>📤 آپلود فایل (PDF / Word / همه فایل‌ها)</span>
+                            <input type="file" multiple accept="*/*" class="hidden" onchange="uploadFilesToExistingPub(${p.id}, this)">
+                        </label>
+                        <button onclick="deletePublication(${p.id})" class="bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs font-bold px-3 py-2 rounded-xl transition">
+                            حذف مقاله
+                        </button>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        // --- ج) مدیریت و افزودن فریلنسرها به مجموعه ---
+        async function addNewFreelancer() {
+            const name = document.getElementById('fl_name').value.trim();
+            const role = document.getElementById('fl_role').value.trim();
+            const skills = document.getElementById('fl_skills').value.trim();
+            const bio = document.getElementById('fl_bio').value.trim();
+
+            if (!name || !role) {
+                alert("لطفاً نام و تخصص فریلنسر را وارد کنید.");
+                return;
+            }
+
+            await putItem("freelancers", {
+                id: Date.now(),
+                name,
+                role,
+                skills: skills || "Research, Academic Writing",
+                bio
+            });
+
+            document.getElementById('fl_name').value = "";
+            document.getElementById('fl_role').value = "";
+            document.getElementById('fl_skills').value = "";
+            document.getElementById('fl_bio').value = "";
+            await refreshAdminAll();
+            alert("✅ فریلنسر جدید با موفقیت به مجموعه Research Pro اضافه شد!");
+        }
+
+        async function deleteFreelancer(id) {
+            if (!confirm("آیا از حذف این فریلنسر از لیست مجموعه مطمئن هستید؟")) return;
+            await deleteItemById("freelancers", id);
+            await refreshAdminAll();
+        }
+
+        async function renderAdminFreelancers() {
+            const container = document.getElementById('adminFreelancersList');
+            const list = await getAllItems("freelancers");
+
+            container.innerHTML = list.map(f => `
+                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex justify-between items-center gap-3">
+                    <div>
+                        <h5 class="font-bold text-slate-900 text-sm">${f.name}</h5>
+                        <p class="text-xs text-blue-600 font-semibold">${f.role}</p>
+                        <p class="text-[11px] text-slate-500 font-mono mt-1">${f.skills}</p>
+                    </div>
+                    <button onclick="deleteFreelancer(${f.id})" class="bg-rose-100 hover:bg-rose-200 text-rose-700 text-xs font-bold px-3 py-1.5 rounded-xl shrink-0">
+                        حذف
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // راه‌اندازی اولیه صفحه
+        window.addEventListener('DOMContentLoaded', async () => {
+            initCalendar('fa');
+            await openDatabase();
+            await renderPublicPublications();
+            await renderPublicFreelancers();
+        });
+    </script>
+</body>
+</html>
